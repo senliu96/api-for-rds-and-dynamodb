@@ -1,8 +1,4 @@
 const AWS = require('aws-sdk')
-const dynamodb = new AWS.DynamoDB({'accessKeyId' : "AKIAIORCMDVUN3UHCQGQ", 
-                   'secretAccessKey'   : "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",
-               		'apiVersion': '2012-08-10',
-               		'region':'us-east-1'})
 var operation ={
 	insertprofile : function(body,cb)
 	{
