@@ -11,7 +11,15 @@ var operation = {
     },
     getdata : function(callback )
     {
-         db.query('select * from account',callback)
+         db.query('select * from account',callback);
+    },
+    getstatus : function( account , callback )
+    {
+        db.query('select status from account where email = ?',[account.email],callback);
+    },
+    setstatus : function( account , callback )
+    {
+        db.query('update account set status = 1 where email = ?',[account.email],callback);
     }
 
 };

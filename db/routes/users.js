@@ -41,4 +41,27 @@ router.post('/insertaccount',function(req, res, next){
     });
 
 });
+router.post('/getstatus',function(req, res, next){
+
+    operation.getstatus(req.body,function(err,count){
+       if(err) {
+            res.json(err);
+        } else {
+            res.send(count[0]);
+        }
+    });
+
+});
+router.post('/setstatus',function(req, res, next){
+
+    operation.setstatus(req.body,function(err,count){
+        if(err) {
+            res.json({'set' : false, 'error' : err});
+        } else {
+            res.json({'set' : true});
+        }
+    });
+
+});
+
 module.exports = router;
